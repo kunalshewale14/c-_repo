@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+class student
+{
+    public:
+    void volume(double side)
+    {
+        double ans = side*side*side;
+        cout<<"volume of cube is "<<ans<<endl;
+    }
+    void volume(double length,double breadth,double height)
+    {
+        double ans = length*breadth*height;
+        cout<<"volume of cubiod is "<<ans<<endl;
+    }
+    void volume(double radius,double height)
+    {
+        double PI = 3.14 , ans;
+        ans = PI*radius*radius*height;
+        cout<<"volume of cylinder "<<ans<<endl;
+    }
+};
+int main() 
+{
+    double side,length,breadth,height,radius;
+    int ch;
+    student stu;
+    cout<<"Enter 1 if you want volume of cube "<<endl;
+    cout<<"Enter 2 if you want volume of cubiod "<<endl;
+    cout<<"Enter 3 if you want volume of cylinder "<<endl;
+    cout<<"Enter your choice "<<endl;
+    cin>>ch;
+    switch(ch)
+    {
+        case 1 : cout<<"Enter the side "<<endl;
+                 cin>>side;
+                 stu.volume(side);
+                 break;
+        case 2 : cout<<"Enter the length "<<endl;
+                 cin>>length;
+                 cout<<"Enter the breadth "<<endl;
+                 cin>>breadth;
+                 cout<<"Enter the height "<<endl;
+                 cin>>height;
+                 stu.volume(length,breadth,height);
+                 break;
+        case 3 : cout<<"Enter the radius "<<endl;
+                 cin>>radius;
+                 cout<<"Enter the height "<<endl;
+                 cin>>height;
+                 stu.volume(radius,height);
+                 break;
+                 
+            default : cout<<"Invalid choice "<<endl;
+    }
+  
+    return 0;
+}
